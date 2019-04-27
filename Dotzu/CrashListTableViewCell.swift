@@ -25,12 +25,12 @@ class CrashListTableViewCell: UITableViewCell, LogCellProtocol {
         textview.text = content
         let attstr = NSMutableAttributedString(string: content)
 
-        attstr.addAttribute(NSAttributedStringKey.foregroundColor,
+        attstr.addAttribute(NSAttributedString.Key.foregroundColor,
                             value: UIColor.white, range: NSRange(location: 0, length: content.count))
         if LogsSettings.shared.date {
             let range = NSRange(location: 0, length: formatDate.count)
-            attstr.addAttribute(NSAttributedStringKey.foregroundColor, value: Color.mainGreen, range: range)
-            attstr.addAttribute(NSAttributedStringKey.font, value: UIFont.boldSystemFont(ofSize: 12), range: range)
+            attstr.addAttribute(NSAttributedString.Key.foregroundColor, value: Color.mainGreen, range: range)
+            attstr.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: 12), range: range)
         }
         textview.attributedText = attstr
     }
